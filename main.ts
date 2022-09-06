@@ -351,7 +351,8 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Eye_3, function (sprite, oth
 statusbars.onZero(StatusBarKind.Eye_Health2, function (status) {
     Eye2.destroy(effects.fountain, 500)
     Laser_2.destroy()
-    Eye3.max = 120
+    Eye_Health3.max = 120
+    Eye_Health3.setColor(7, 2)
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -719,6 +720,8 @@ controller.combos.attachCombo("Left A", function () {
 statusbars.onZero(StatusBarKind.Eye_Health1, function (status) {
     Eye1.destroy(effects.fountain, 500)
     Laser_1.destroy()
+    Eye_Health2.max = 120
+    Eye_Health2.setColor(7, 2)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     statusbar.value += -5
@@ -902,7 +905,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Laser2, function (sprite, otherS
     Player.startEffect(effects.trail, 200)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Bossman, function (sprite, otherSprite) {
-    Bossman_Health.value += 3
+    Bossman_Health.value += -3
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     Tree_Dude_GOOD.destroy()
@@ -946,6 +949,24 @@ statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
         c c c c c c c c c c c c c c c c 
         b b b b c b b b b c b b b b c b 
         `, SpriteKind.Eye_2)
+    Eye3 = sprites.create(img`
+        b b b b c b b b b c b b b b c b 
+        b b b b c b b b b c b b b b c b 
+        b b b b c b b b b c b b b b c b 
+        b b b b c b b d d c b b b b c b 
+        c c c c 1 1 d 1 1 d 1 1 c c c c 
+        b b b 1 1 d 1 1 1 1 d 1 1 b c b 
+        b b 1 1 1 d 1 f f 1 d 1 1 1 c b 
+        b 1 1 1 1 d 1 7 f 1 d 1 1 1 1 b 
+        b b 1 1 1 d 1 1 1 1 d 1 1 1 c b 
+        c c c 1 1 d 1 1 1 1 d 1 1 c c c 
+        b b b b 1 1 d 1 1 d 1 1 b b c b 
+        b b b b c b b d d c b b b b c b 
+        b b b b c b b b b c b b b b c b 
+        b b b b c b b b b c b b b b c b 
+        c c c c c c c c c c c c c c c c 
+        b b b b c b b b b c b b b b c b 
+        `, SpriteKind.Eye_3)
     Eye4 = sprites.create(img`
         b b b b c b b b b c b b b b c b 
         b b b b c b b b b c b b b b c b 
@@ -1076,11 +1097,11 @@ statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     Eye_Health4.attachToSprite(Eye4)
     Eye_Health4.max = 1e+38
     Eye_Health4.setColor(11, 13)
-    Eye3 = statusbars.create(15, 3, StatusBarKind.Eye_Health4)
+    Eye_Health3 = statusbars.create(15, 3, StatusBarKind.Eye_Health3)
     Eye_Health3.attachToSprite(Eye3)
-    Eye3.max = 1e+38
+    Eye_Health3.max = 1e+38
     Eye_Health3.setColor(11, 13)
-    Eye_Health2 = statusbars.create(15, 3, StatusBarKind.Eye_Health4)
+    Eye_Health2 = statusbars.create(15, 3, StatusBarKind.Eye_Health2)
     Eye_Health2.attachToSprite(Eye2)
     Eye_Health2.max = 1e+38
     Eye_Health2.setColor(11, 13)
@@ -2039,6 +2060,7 @@ statusbars.onZero(StatusBarKind.Eye_Health3, function (status) {
     Eye3.destroy(effects.fountain, 500)
     Laser_3.destroy()
     Eye_Health4.max = 120
+    Eye_Health4.setColor(7, 2)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Laser4, function (sprite, otherSprite) {
     pause(500)
@@ -2262,18 +2284,18 @@ let Clampearl_Right1: Sprite = null
 let Clampearl_Right: Sprite = null
 let Clam_Pearl: Sprite = null
 let Bossman: Sprite = null
-let Eye_Health2: StatusBarSprite = null
 let Eye_Health4: StatusBarSprite = null
 let Laser_4: Sprite = null
 let Laser_3: Sprite = null
 let Eye4: Sprite = null
+let Eye3: Sprite = null
 let Bossman_Health: StatusBarSprite = null
 let Eye_Health1: StatusBarSprite = null
+let Eye_Health2: StatusBarSprite = null
 let Laser_1: Sprite = null
 let Eye1: Sprite = null
 let statusbar2: StatusBarSprite = null
 let Tree_Dude_BAD: Sprite = null
-let Eye3: StatusBarSprite = null
 let Laser_2: Sprite = null
 let Eye2: Sprite = null
 let projectile2: Sprite = null
