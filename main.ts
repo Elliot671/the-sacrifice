@@ -1126,20 +1126,20 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
     tiles.setCurrentTilemap(tilemap`level10`)
     Bossman = sprites.create(img`
         . . . . . c c c c c c . . . . . 
-        . . c c c d d d d d d c c c . . 
-        . c d d d d d c c d d d d d c . 
-        . c d c c c d c c d c c c d c . 
-        c c d d c c d c c d c c d d c c 
-        c d c c d c c c c c c d c c d c 
-        c d c c c c c c c c c c c c d c 
-        . c d d c c c c c c c c d d c . 
-        . . c d d c 1 1 1 1 c d d c . . 
-        . . c b b b 1 f f 1 b b b c . . 
-        . c b c c c 1 f f 1 c c c b c . 
-        c d c c c c 1 1 1 1 c c c c d c 
-        c b d d c c c c c c c c d d b c 
-        c b b d d d d d d d d d d b b c 
-        . c b b b b b b b b b b b b c . 
+        . . c c c 2 2 2 2 2 2 c c c . . 
+        . c 2 2 1 2 2 2 1 2 2 2 1 2 c . 
+        . c 2 1 1 1 2 1 1 1 2 1 1 1 c . 
+        c c 2 1 1 1 2 1 1 1 2 1 1 1 c c 
+        c 2 e 1 1 1 e 1 1 1 e 1 1 1 2 c 
+        c 2 e e e e e e e e e e e e 2 c 
+        . c 2 2 e e e e e e e e 2 2 c . 
+        . . c 2 2 e d d d d e 2 2 c . . 
+        . . c 4 4 4 d f f d 4 4 4 c . . 
+        . c 4 1 1 1 d 1 1 1 e 1 1 1 c . 
+        c 2 e 1 1 1 d 1 1 1 e 1 1 1 2 c 
+        c 2 2 1 1 1 e 1 1 1 e 1 1 1 2 c 
+        c 2 2 2 1 2 2 2 1 2 2 2 1 2 2 c 
+        . c 2 2 2 2 2 2 2 2 2 2 2 2 c . 
         . . c c c c c c c c c c c c . . 
         `, SpriteKind.Bossman)
     tiles.placeOnRandomTile(Bossman, assets.tile`myTile14`)
@@ -1147,19 +1147,19 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
     timer.after(1500, function () {
         Clam_Pearl = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . 1 1 1 1 . . . . . . . 
-            . . . . . 1 d d 1 . . . . . . . 
-            . . . . . 1 d d 1 . . . . . . . 
-            . . . . . 1 1 1 1 . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . . . b 8 b . . . . . . 
+            . . . . . b b 6 c 6 b b . . . . 
+            . . . . 8 6 a c c c a 6 8 . . . 
+            . . . b 6 a b b b b b a 6 b . . 
+            . . . b a b 8 8 b 8 8 b a b . . 
+            . . b 6 c b 8 a c a 8 b c 6 b . 
+            . . 8 c c b b c a c b b c c 8 . 
+            . . b 6 c b 8 a c a 8 b c 6 b . 
+            . . . b a b 8 8 b 8 8 b a b . . 
+            . . . b 6 a b b b b b a 6 b . . 
+            . . . . 8 6 a c c c a 6 8 . . . 
+            . . . . . b b 6 c 6 b b . . . . 
+            . . . . . . . b 8 b . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             `, Bossman, 100, 0)
