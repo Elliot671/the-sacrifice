@@ -1147,34 +1147,34 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
     timer.after(1500, function () {
         Clam_Pearl = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
-            . . . . . . . b 8 b . . . . . . 
-            . . . . . b b 6 c 6 b b . . . . 
-            . . . . 8 6 a c c c a 6 8 . . . 
-            . . . b 6 a b b b b b a 6 b . . 
-            . . . b a b 8 8 b 8 8 b a b . . 
-            . . b 6 c b 8 a c a 8 b c 6 b . 
-            . . 8 c c b b c a c b b c c 8 . 
-            . . b 6 c b 8 a c a 8 b c 6 b . 
-            . . . b a b 8 8 b 8 8 b a b . . 
-            . . . b 6 a b b b b b a 6 b . . 
-            . . . . 8 6 a c c c a 6 8 . . . 
-            . . . . . b b 6 c 6 b b . . . . 
-            . . . . . . . b 8 b . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            `, Bossman, 100, 0)
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, Bossman, 0, -100)
         Clam_Pearl = sprites.createProjectileFromSprite(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -1187,12 +1187,12 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -1206,17 +1206,17 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
+            2 . . . 2 1 1 1 . . . . . . . . 
+            . . 2 2 1 1 1 1 . . . . . . . . 
+            . 2 . . . 1 1 1 . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            `, Bossman, 0, -100)
+            . . . . . . . . . . . . . . . . 
+            `, Bossman, 100, 0)
     })
     timer.after(2500, function () {
         Clam_Pearl = sprites.createProjectileFromSprite(img`
@@ -1225,12 +1225,12 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . 1 1 1 1 . . . . . . . 
-            . . . . . 1 d d 1 . . . . . . . 
-            . . . . . 1 d d 1 . . . . . . . 
-            . . . . . 1 1 1 1 . . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d f f d 1 . . . . . . . 
+            . . . 1 d d d d 1 . . . . . . . 
+            . . . 1 1 1 1 1 1 . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -1241,13 +1241,13 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
+            2 . . . 2 1 1 1 . . . . . . . . 
+            . . 2 2 1 1 1 1 . . . . . . . . 
+            . 2 . . . 1 1 1 . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 d d 1 . . . . . . . . 
-            . . . . 1 1 1 1 . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -2055,6 +2055,7 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
         tiles.placeOnRandomTile(Clampearl_Right13, assets.tile`myTile25`)
         tiles.placeOnRandomTile(Clampearl_Right14, assets.tile`myTile25`)
         tiles.placeOnRandomTile(Clampearl_Right15, assets.tile`myTile25`)
+        pause(200)
         Clampearl_Right.setVelocity(35, 0)
         Clampearl_Right1.setVelocity(44, 0)
         Clampearl_Right2.setVelocity(27, 0)
@@ -2288,6 +2289,36 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Laser1, function (sprite, otherS
     Player_Health.value += -5
     Player.startEffect(effects.trail, 200)
 })
+controller.combos.attachCombo("Up A A B", function () {
+    Dawn_ = sprites.create(img`
+        ..........................
+        ...........44.............
+        ..........4444............
+        ..........4444............
+        ...........44.............
+        ...........ee.............
+        ...........ee.............
+        ...........ee.............
+        ...........ee.............
+        ........eeeeeeee..........
+        .........666566...........
+        .........666556...........
+        .........665656...........
+        .........555655...........
+        .........656666...........
+        .........656666...........
+        .........655665...........
+        .........565556...........
+        .........566566...........
+        .........666566...........
+        .........666566...........
+        ..........6555............
+        ..........5666............
+        ...........66.............
+        ..........................
+        ..........................
+        `, SpriteKind.Dawn)
+})
 statusbars.onZero(StatusBarKind.BossmanHealth, function (status) {
     Bossman.destroy(effects.ashes, 1000)
 })
@@ -2297,6 +2328,7 @@ sprites.onOverlap(SpriteKind.Fireball, SpriteKind.Eye_4, function (sprite, other
     pause(15)
     projectile2.destroy(effects.fire, 500)
 })
+let Dawn_: Sprite = null
 let Clampearl_Right15: Sprite = null
 let Clampearl_Right14: Sprite = null
 let Clampearl_Right13: Sprite = null
