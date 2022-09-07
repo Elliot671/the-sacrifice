@@ -16,6 +16,7 @@ namespace SpriteKind {
     export const Parkour = SpriteKind.create()
     export const Bossman = SpriteKind.create()
     export const Dawn = SpriteKind.create()
+    export const Fireball = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Eye_Health1 = StatusBarKind.create()
@@ -342,7 +343,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, l
         Tree_Dude_GOOD.follow(Player, 35)
     })
 })
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Eye_3, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Fireball, SpriteKind.Eye_3, function (sprite, otherSprite) {
     pause(500)
     Eye_Health3.value += -13
     pause(15)
@@ -591,6 +592,7 @@ controller.combos.attachCombo("Left A", function () {
         . . . . . . . . . . . . . . . . 
         `, Player, -75, 0)
     projectile2.startEffect(effects.fire)
+    projectile2.setKind(SpriteKind.Fireball)
     animation.runImageAnimation(
     Player,
     [img`
@@ -729,6 +731,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         statusbar.value += 5
     })
 })
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Player, function (sprite, otherSprite) {
+    pause(75)
+})
 controller.combos.attachCombo("Right A", function () {
     pause(100)
     projectile2 = sprites.createProjectileFromSprite(img`
@@ -750,6 +755,7 @@ controller.combos.attachCombo("Right A", function () {
         . . . . . . . . . . . . . . . . 
         `, Player, 75, 0)
     projectile2.startEffect(effects.fire)
+    projectile2.setKind(SpriteKind.Fireball)
     animation.runImageAnimation(
     Player,
     [img`
@@ -893,9 +899,13 @@ controller.combos.attachCombo("Right A", function () {
     false
     )
 })
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Eye_1, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Fireball, SpriteKind.Bossman, function (sprite, otherSprite) {
+    pause(75)
+    Bossman_Health.value += -3
+})
+sprites.onOverlap(SpriteKind.Fireball, SpriteKind.Eye_2, function (sprite, otherSprite) {
     pause(500)
-    Eye_Health1.value += -11
+    Eye_Health2.value += -12
     pause(15)
     projectile2.destroy(effects.fire, 500)
 })
@@ -904,8 +914,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Laser2, function (sprite, otherS
     Player_Health.value += -5
     Player.startEffect(effects.trail, 200)
 })
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Bossman, function (sprite, otherSprite) {
-    Bossman_Health.value += -3
+sprites.onOverlap(SpriteKind.Fireball, SpriteKind.Eye_1, function (sprite, otherSprite) {
+    pause(500)
+    Eye_Health1.value += -11
+    pause(15)
+    projectile2.destroy(effects.fire, 500)
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     Tree_Dude_GOOD.destroy()
@@ -1105,12 +1118,6 @@ statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     Eye_Health2.attachToSprite(Eye2)
     Eye_Health2.max = 1e+38
     Eye_Health2.setColor(11, 13)
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Eye_2, function (sprite, otherSprite) {
-    pause(500)
-    Eye_Health2.value += -12
-    pause(15)
-    projectile2.destroy(effects.fire, 500)
 })
 statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
     music.playMelody("C5 C5 C5 C5 C5 C5 C5 C5 ", 300)
@@ -2036,10 +2043,34 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
         tiles.placeOnRandomTile(Clampearl_Right1, assets.tile`myTile25`)
         tiles.placeOnRandomTile(Clampearl_Right2, assets.tile`myTile25`)
         tiles.placeOnRandomTile(Clampearl_Right3, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right4, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right5, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right6, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right7, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right8, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right9, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right10, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right11, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right12, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right13, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right14, assets.tile`myTile25`)
+        tiles.placeOnRandomTile(Clampearl_Right15, assets.tile`myTile25`)
         Clampearl_Right.setVelocity(35, 0)
         Clampearl_Right1.setVelocity(44, 0)
         Clampearl_Right2.setVelocity(27, 0)
-        Clampearl_Right3.setVelocity(58, 0)
+        Clampearl_Right3.setVelocity(82, 0)
+        Clampearl_Right4.setVelocity(74, 0)
+        Clampearl_Right5.setVelocity(34, 0)
+        Clampearl_Right6.setVelocity(10, 0)
+        Clampearl_Right7.setVelocity(61, 0)
+        Clampearl_Right8.setVelocity(58, 0)
+        Clampearl_Right9.setVelocity(68, 0)
+        Clampearl_Right10.setVelocity(26, 0)
+        Clampearl_Right11.setVelocity(88, 0)
+        Clampearl_Right12.setVelocity(98, 0)
+        Clampearl_Right13.setVelocity(81, 0)
+        Clampearl_Right14.setVelocity(39, 0)
+        Clampearl_Right15.setVelocity(100, 0)
     })
     Bossman_Health = statusbars.create(20, 3, StatusBarKind.BossmanHealth)
     Bossman_Health.positionDirection(CollisionDirection.Top)
@@ -2061,6 +2092,12 @@ statusbars.onZero(StatusBarKind.Eye_Health3, function (status) {
     Laser_3.destroy()
     Eye_Health4.max = 120
     Eye_Health4.setColor(7, 2)
+})
+sprites.onOverlap(SpriteKind.Fireball, SpriteKind.EnemyTree, function (sprite, otherSprite) {
+    pause(300)
+    statusbar2.value += -10
+    pause(15)
+    projectile2.destroy(effects.fire, 500)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Laser4, function (sprite, otherSprite) {
     pause(500)
@@ -2254,15 +2291,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Laser1, function (sprite, otherS
 statusbars.onZero(StatusBarKind.BossmanHealth, function (status) {
     Bossman.destroy(effects.ashes, 1000)
 })
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Eye_4, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Fireball, SpriteKind.Eye_4, function (sprite, otherSprite) {
     pause(500)
     Eye_Health4.value += -14
-    pause(15)
-    projectile2.destroy(effects.fire, 500)
-})
-sprites.onOverlap(SpriteKind.Projectile, SpriteKind.EnemyTree, function (sprite, otherSprite) {
-    pause(300)
-    statusbar2.value += -10
     pause(15)
     projectile2.destroy(effects.fire, 500)
 })
@@ -2289,8 +2320,8 @@ let Laser_4: Sprite = null
 let Laser_3: Sprite = null
 let Eye4: Sprite = null
 let Eye3: Sprite = null
-let Bossman_Health: StatusBarSprite = null
 let Eye_Health1: StatusBarSprite = null
+let Bossman_Health: StatusBarSprite = null
 let Eye_Health2: StatusBarSprite = null
 let Laser_1: Sprite = null
 let Eye1: Sprite = null
