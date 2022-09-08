@@ -27,7 +27,6 @@ namespace StatusBarKind {
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, location) {
     pause(1000)
-    game.splash("Sacrifice The Tree")
     Player.setImage(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . e e e e . . . . . . 
@@ -169,6 +168,24 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile0`, function (sprite, l
         8888888888888888888888888888888888888888888888888888888888888888888888aaaaa66666666666666666666666aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         `)
     tiles.setCurrentTilemap(tilemap`level15`)
+    game.setDialogFrame(img`
+        e f f e f e e f e e f e e f e 
+        f e f f e f f e f f e f f e f 
+        e f e e f e e f e e f e e f e 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f e f f f f e f f f f e 
+        e f f e f e f f e f e f f e f 
+        f e e f f f e e f f f e e f f 
+        `)
+    game.showLongText("Sacrifice Him", DialogLayout.Full)
     timer.after(5555, function () {
         scene.setBackgroundImage(img`
             bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -719,6 +736,47 @@ controller.combos.attachCombo("Left A", function () {
     false
     )
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Dawn, function (sprite, otherSprite) {
+    let mySprite: Sprite = null
+    mySprite.setImage(img`
+        .....................
+        .....................
+        .....................
+        .....................
+        .................6...
+        ................666..
+        ................656..
+        ................655..
+        ................565..
+        ................566..
+        ................566..
+        ................566..
+        ................655..
+        ................656..
+        ......eeee......656..
+        .....eeffee.....656..
+        ....eeffffee....655..
+        ...eeffffffee...566..
+        ...effffffffe...656..
+        ...effffffffe...656..
+        ...effffffffe...656..
+        ...effffffffe...656..
+        ...eeeeeeeeee...665..
+        .....eeeeee....ee6ee.
+        .....eeeeee......e...
+        .....eeeeee......e...
+        .....eeeeee......e...
+        .....ee..ee......4...
+        .....ee..ee.....444..
+        .................4...
+        .....................
+        .....................
+        .....................
+        .....................
+        .....................
+        .....................
+        `)
+})
 statusbars.onZero(StatusBarKind.Eye_Health1, function (status) {
     Eye1.destroy(effects.fountain, 500)
     Laser_1.destroy()
@@ -926,6 +984,8 @@ statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     scene.cameraShake(4, 500)
     pause(550)
     tiles.setCurrentTilemap(tilemap`level9`)
+    pause(500)
+    game.showLongText("LV.2 What an Eyesore", DialogLayout.Bottom)
     Eye1 = sprites.create(img`
         b b b b c b b b b c b b b b c b 
         b b b b c b b b b c b b b b c b 
@@ -1241,13 +1301,13 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            2 . . . 2 1 1 1 . . . . . . . . 
-            . . 2 2 1 1 1 1 . . . . . . . . 
-            . 2 . . . 1 1 1 . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
+            . . . . . 1 1 1 2 . 2 2 . . . . 
+            . . . . . 1 1 1 1 2 . . . . . . 
+            . . . . . 1 1 1 2 . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -2076,9 +2136,27 @@ statusbars.onZero(StatusBarKind.Eye_Health4, function (status) {
     Bossman_Health = statusbars.create(20, 3, StatusBarKind.BossmanHealth)
     Bossman_Health.positionDirection(CollisionDirection.Top)
     Bossman_Health.setStatusBarFlag(StatusBarFlag.SmoothTransition, true)
-    Bossman_Health.setLabel("Bossman", 2)
+    Bossman_Health.setLabel("Teethor", 2)
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
+    game.setDialogFrame(img`
+        2 2 2 2 2 f f f f f f f 2 f f 
+        f 2 2 2 f f f f f f f f 2 f f 
+        f 2 f f f f f f f f f f 2 f f 
+        f 2 f f f f f f f f f f 2 f f 
+        f 2 f f f f f f f f f f f f f 
+        f f f f f f f f f f f f 2 f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f 2 f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f f f f 
+        f f f f f f f f f f f f 2 f f 
+        f f f f f f f f f f f 2 2 2 2 
+        `)
+    pause(100)
     game.splash("You Have Failed Me.", "Useless Mortal.")
     Player.destroy(effects.warmRadial, 500)
     pause(5000)
@@ -2391,7 +2469,25 @@ Player = sprites.create(img`
     `, SpriteKind.Player)
 scene.cameraFollowSprite(Player)
 controller.moveSprite(Player, 80, 80)
-game.splash("Lv 1", "The Portal Opens")
+game.setDialogTextColor(4)
+game.setDialogFrame(img`
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+    2 1 2 2 2 1 2 2 2 1 2 2 2 2 1 
+    1 1 1 2 1 1 1 2 1 1 1 2 2 1 1 
+    1 1 1 f 1 1 1 f 1 1 1 f f 1 1 
+    1 1 1 f 1 1 1 f 1 1 1 f f 1 1 
+    f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f 
+    1 1 1 f 1 1 1 f 1 1 1 f f 1 1 
+    1 1 1 f 1 1 1 f 1 1 1 f f 1 1 
+    1 1 1 2 1 1 1 2 1 1 1 2 2 1 1 
+    2 1 2 2 2 1 2 2 2 1 2 2 2 2 1 
+    `)
+game.showLongText("LV.1 The Portal Opens", DialogLayout.Bottom)
 timer.after(2000, function () {
     tiles.setCurrentTilemap(tilemap`level4`)
 })
